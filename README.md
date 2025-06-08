@@ -15,8 +15,9 @@ As taxas de conversão são obtidas dinamicamente por meio de uma API de câmbio
 
 ## 💡 Conversões Disponíveis
 Real (BRL) → Dólar (USD)  
-Euro (EUR) → Real (BRL)  
-Libra (GBP) → Dólar (USD)  
-Dólar (USD) → Iene (JPY)  
-Dólar Canadense (CAD) → Real (BRL)  
+Dólar (USD) → Real (BRL)  
+Peso Colombiano () → Dólar (USD)  
+Dólar (USD) → Peso Colombiano  
+//Dólar Canadense (CAD) → Real (BRL)  
 Peso Argentino (ARS) → Real (BRL)
+Real → Peso Argentino
