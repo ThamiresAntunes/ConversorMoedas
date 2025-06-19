@@ -1,9 +1,12 @@
 
+import service.CambioService;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        CambioService cambioService = new CambioService();
 
         int opcao;
         do {
@@ -12,7 +15,7 @@ public class Main {
             System.out.println("2 - Real (BRL) para Dólar (USD)");
             System.out.println("3 - Euro (EUR) para Real (BRL)");
             System.out.println("4 - Real (BRL) para Euro (EUR)");
-            System.out.println("5 -  Dólar Canadense (CAD) para Real (BRL)");
+            System.out.println("5 - Dólar Canadense (CAD) para Real (BRL)");
             System.out.println("6 - Real (BRL) para Dólar Canadense (CAD)");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
@@ -50,6 +53,15 @@ public class Main {
                 default:
                     System.out.println("Opção inválida.");
                     continue;
+            }
+
+            if (opcao != 0) {
+                System.out.print("Digite o valor em " + vInicial + ": ");
+                double valor = scanner.nextDouble();
+                double taxa = cambioService.buscarTaxaCambio(vInicial, vFinal);
+                double convertido = valor * taxa;
+                System.out.println("taxa: " + taxa + " valor convertido: " + convertido);
+                System.out.printf("Valor convertido: %.2f %s\n", convertido, vFinal);
             }
 
 

@@ -23,7 +23,6 @@ public class CambioService {
         }
     }
 
-
     public double buscarTaxaCambio(String vInicial, String vFinal) {
         String urlStr = String.format("https://v6.exchangerate-api.com/v6/%s/latest/%s", API_KEY, vInicial);
 
@@ -42,11 +41,11 @@ public class CambioService {
             JsonObject json = JsonParser.parseString(resposta.toString()).getAsJsonObject();
             System.out.println("Resposta JSON: " + String.valueOf(resposta));
             JsonObject rates = json.getAsJsonObject("conversion_rates");
+
             System.out.println("Moeda destino esperada: " + vFinal);
             System.out.println("Chaves disponíveis: " + String.valueOf(rates.keySet()));
+
             if (rates != null && rates.has(vFinal)) {
-                System.out.println("Entrou if do rates");
-                System.out.println("vFinal: " + vFinal);
                 return rates.get(vFinal).getAsDouble();
             } else {
                 System.out.println("Moeda destino não encontrada na resposta.");
